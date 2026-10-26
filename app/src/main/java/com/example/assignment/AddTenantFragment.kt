@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.assignment.databinding.FragmentAddTenantBinding
 
+
 class AddTenantFragment : Fragment() {
     private var _binding: FragmentAddTenantBinding? = null
     private val binding get() = _binding!!

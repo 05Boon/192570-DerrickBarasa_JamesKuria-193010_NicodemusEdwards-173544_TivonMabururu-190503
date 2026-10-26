@@ -29,15 +29,18 @@ class ViewTenantsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val newTenant = args.newTenant
-        if (newTenant != null) {
+        if (newTenant == null) {
+            binding.newTenantGroup.visibility = View.GONE
+        } else {
             binding.newTenantGroup.visibility = View.VISIBLE
             binding.tenant = newTenant
-            binding.callButton.setOnClickListener {
+        }
+
+        binding.callButton.setOnClickListener {
+            if (newTenant != null) {
                 val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:${newTenant.phone}"))
                 startActivity(intent)
             }
-        } else {
-            binding.newTenantGroup.visibility = View.GONE
         }
 
         val tenants = TenantRepository.tenants
