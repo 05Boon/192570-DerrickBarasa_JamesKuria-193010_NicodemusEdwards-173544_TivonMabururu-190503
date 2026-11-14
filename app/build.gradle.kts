@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
-// NEW: switch Safe Args on for this app.
-// It must come BELOW the android.application line
-    id("androidx.navigation.safeargs.kotlin")
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.androidx.navigation.safeargs)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -32,6 +32,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+    kotlinOptions {
+        jvmTarget = "11"
+    }
     buildFeatures {
         viewBinding = true
         dataBinding = true
@@ -50,4 +53,10 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation("androidx.room:room-runtime:2.7.2")
+    implementation("androidx.room:room-ktx:2.7.2")
+
+    ksp("androidx.room:room-compiler:2.7.2")
+
 }
