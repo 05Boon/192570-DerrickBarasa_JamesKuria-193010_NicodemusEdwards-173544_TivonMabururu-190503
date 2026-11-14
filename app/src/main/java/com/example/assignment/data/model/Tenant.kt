@@ -1,4 +1,4 @@
-package com.example.assignment
+package com.example.assignment.data.model
 
 // Serializable is built into Java/Kotlin: no plugin needed
 import java.io.Serializable

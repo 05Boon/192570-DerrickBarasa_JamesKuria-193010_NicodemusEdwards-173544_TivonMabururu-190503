@@ -1,4 +1,4 @@
-package com.example.assignment
+package com.example.assignment.ui.dashboard
 
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.assignment.data.repository.TenantRepository
 import com.example.assignment.databinding.FragmentDashboardBinding
 
 class DashboardFragment : Fragment() {

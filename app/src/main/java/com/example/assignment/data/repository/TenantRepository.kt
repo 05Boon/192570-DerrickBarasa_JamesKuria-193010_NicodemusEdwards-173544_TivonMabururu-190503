@@ -1,4 +1,6 @@
-package com.example.assignment
+package com.example.assignment.data.repository
+
+import com.example.assignment.data.model.Tenant
 
 object TenantRepository {
     val tenants = mutableListOf<Tenant>()

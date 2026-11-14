@@ -1,4 +1,4 @@
-package com.example.assignment
+package com.example.assignment.ui.main
 
 import android.content.Intent
 import android.os.Bundle
@@ -13,8 +13,10 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.assignment.R
 import com.example.assignment.databinding.ActivityMainBinding
 import com.example.assignment.databinding.NavHeaderBinding
+import com.example.assignment.ui.auth.LoginActivity
 
 class MainActivity : AppCompatActivity() {
 

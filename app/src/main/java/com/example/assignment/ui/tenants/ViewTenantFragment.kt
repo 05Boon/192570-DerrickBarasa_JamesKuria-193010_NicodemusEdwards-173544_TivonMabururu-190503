@@ -1,4 +1,4 @@
-package com.example.assignment
+package com.example.assignment.ui.tenants
 
 import android.content.Intent
 import android.net.Uri
@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
+import com.example.assignment.data.repository.TenantRepository
 import com.example.assignment.databinding.FragmentViewTenantsBinding
 
 class ViewTenantsFragment : Fragment() {
