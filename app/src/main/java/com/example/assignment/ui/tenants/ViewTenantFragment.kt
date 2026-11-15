@@ -1,4 +1,4 @@
-package com.example.assignment.ui.tenants
+﻿package com.example.assignment.ui.tenants
 
 import android.content.Intent
 import android.net.Uri
@@ -7,15 +7,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.navArgs
-import com.example.assignment.data.repository.TenantRepository
 import com.example.assignment.databinding.FragmentViewTenantsBinding
+import com.example.assignment.ui.viewmodel.TenantViewModel
 
-class ViewTenantsFragment : Fragment() {
+class ViewTenantFragment : Fragment() {
 
     private var _binding: FragmentViewTenantsBinding? = null
     private val binding get() = _binding!!
+
     private val args: ViewTenantsFragmentArgs by navArgs()
+
+    private val viewModel: TenantViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,11 +34,11 @@ class ViewTenantsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val newTenant = args.newTenant
-        if (newTenant == null) {
-            binding.newTenantGroup.visibility = View.GONE
-        } else {
-            binding.newTenantGroup.visibility = View.VISIBLE
+        if (newTenant != null) {
             binding.tenant = newTenant
+            binding.newTenantGroup.visibility = View.VISIBLE
+        } else {
+            binding.newTenantGroup.visibility = View.GONE
         }
 
         binding.callButton.setOnClickListener {
@@ -44,11 +48,8 @@ class ViewTenantsFragment : Fragment() {
             }
         }
 
-        val tenants = TenantRepository.tenants
-        if (tenants.isEmpty()) {
-            binding.allTenantsTextView.text = "No tenants yet. Add one from the Dashboard."
-        } else {
-            binding.allTenantsTextView.text = tenants.joinToString("\n\n") { it.summary() }
+        viewModel.allTenantsText.observe(viewLifecycleOwner) { text ->
+            binding.allTenantsTextView.text = text
         }
     }
 
