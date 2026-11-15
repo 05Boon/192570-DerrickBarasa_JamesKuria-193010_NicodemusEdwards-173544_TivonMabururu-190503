@@ -17,7 +17,7 @@ class ViewTenantFragment : Fragment() {
     private var _binding: FragmentViewTenantsBinding? = null
     private val binding get() = _binding!!
 
-    private val args: ViewTenantsFragmentArgs by navArgs()
+    private val args: ViewTenantFragmentArgs by navArgs()
 
     private val viewModel: TenantViewModel by activityViewModels()
 

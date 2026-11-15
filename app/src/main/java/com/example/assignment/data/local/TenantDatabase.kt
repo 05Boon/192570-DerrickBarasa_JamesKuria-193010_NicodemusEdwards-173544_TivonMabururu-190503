@@ -1,10 +1,9 @@
-package com.example.assignment.data
+package com.example.assignment.data.local
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.assignment.data.dao.TenantDao
 import com.example.assignment.data.model.Tenant
 
 // Defines the tables held by the database
