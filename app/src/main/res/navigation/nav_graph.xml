@@ -39,7 +39,7 @@
 
     <fragment
         android:id="@+id/viewTenantsFragment"
-        android:name="com.example.assignment.ui.tenants.ViewTenantsFragment"
+        android:name="com.example.assignment.ui.tenants.ViewTenantFragment"
         android:label="View Tenants"
         tools:layout="@layout/fragment_view_tenants">
         <argument
